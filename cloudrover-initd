@@ -1,4 +1,8 @@
-#! /bin/sh
+#!/bin/sh
+#
+# chkconfig: - 80 05
+# description: Enable CloudRover
+#
 
 ### BEGIN INIT INFO
 # Provides:          cloudrover
