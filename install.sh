@@ -25,7 +25,7 @@ mkdir -p /usr/local/var/run/cloudrover
 cp cloudrover.conf /usr/local/lib/cloudrover/priv/
 
 # download init.d script
-cp cloudrover-initd /usr/local/etc/rc.d/cloudrover
+mv cloudrover-initd /usr/local/etc/rc.d/cloudrover
 chmod 0755 /usr/local/etc/rc.d/cloudrover
 ln -s /usr/local/etc/rc.d/cloudrover /etc/init.d/cloudrover
 
