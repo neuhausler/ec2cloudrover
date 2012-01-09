@@ -17,35 +17,34 @@ PID=/usr/local/var/run/cloudrover/cloudrover.pid
 
 test -x $COMMAND || exit 1
 
-. /lib/lsb/init-functions
+export HOME=/root
+
+. /etc/init.d/functions
 
 set -e
 
 case "$1" in
   start)
     echo "Starting $DESC: "
-	  start-stop-daemon --start --quiet --pidfile $PID --exec $COMMAND -- $COMMAND_OPTS || true
+	  daemon $COMMAND || true
 	  echo "Done"
 	  ;;
   stop)
 	  echo "Stopping $DESC: "
-	  start-stop-daemon --stop --quiet --pidfile $PID || true
+	  killproc -p $PID || true
 	  echo "Done"
 	  ;;
   restart)
 	  echo "Restarting $DESC: "
-	  start-stop-daemon --stop --quiet --pidfile $PID || true
+	  killproc -p $PID || true
 	  sleep 1
-	  start-stop-daemon --start --quiet --pidfile $PID --exec $COMMAND -- $COMMAND_OPTS || true
+	  daemon $COMMAND || true
 	  echo "Done"
-	  ;;
-  status)
-	  status_of_proc -p $PID "$PROCESS" cloudrover && exit 0 || exit $?
 	  ;;
   *)
 	  echo "Usage: $NAME {start|stop|restart|status}" >&2
 	  exit 1
-	;;
+	  ;;
 esac
 
 exit 0
