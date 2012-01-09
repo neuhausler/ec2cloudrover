@@ -11,10 +11,10 @@ PATH=/sbin:/usr/sbin:/bin:/usr/bin:/usr/local/bin:/usr/local/sbin
 
 
 git clone git://github.com/neuhausler/CloudRover
-cd cloudrover
+cd CloudRover
 make
 cd ..
-cp -r cloudrover /usr/local/lib/
+cp -r CloudRover/* /usr/local/lib/cloudrover
 
 ln -s /usr/local/lib/cloudrover/priv /usr/local/etc/cloudrover
 mkdir -p /usr/local/var/log/cloudrover
