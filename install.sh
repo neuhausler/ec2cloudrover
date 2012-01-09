@@ -14,6 +14,7 @@ git clone git://github.com/neuhausler/CloudRover
 cd CloudRover
 make
 cd ..
+mkdir -p /usr/local/lib/cloudrover
 cp -r CloudRover/* /usr/local/lib/cloudrover
 
 ln -s /usr/local/lib/cloudrover/priv /usr/local/etc/cloudrover
