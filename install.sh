@@ -10,7 +10,7 @@
 PATH=/sbin:/usr/sbin:/bin:/usr/bin:/usr/local/bin:/usr/local/sbin
 
 
-git clone git://github.com/neuhausler/cloudrover
+git clone git://github.com/neuhausler/CloudRover
 cd cloudrover
 make
 cd ..
