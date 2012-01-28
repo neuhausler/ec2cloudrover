@@ -18,7 +18,7 @@ mkdir -p /usr/local/lib/cloudrover
 cp -r CloudRover/* /usr/local/lib/cloudrover
 
 ln -s /usr/local/lib/cloudrover/priv /usr/local/etc/cloudrover
-mkdir -p /usr/local/etc/cloudrover/var
+mkdir -p /usr/local/etc/cloudrover/work
 mkdir -p /usr/local/var/log/cloudrover
 mkdir -p /usr/local/var/run/cloudrover
 
