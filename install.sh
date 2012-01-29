@@ -17,16 +17,19 @@ cd ..
 mkdir -p /usr/local/lib/cloudrover
 cp -r CloudRover/* /usr/local/lib/cloudrover
 
-ln -s /usr/local/lib/cloudrover/priv /usr/local/etc/cloudrover
+ln -s -f /usr/local/lib/cloudrover/priv /usr/local/etc/cloudrover
 mkdir -p /usr/local/etc/cloudrover/work
 mkdir -p /usr/local/var/log/cloudrover
 mkdir -p /usr/local/var/run/cloudrover
 
+# copy start-service script
+cp start-service.sh /usr/local/lib/cloudrover/
+
 # copy changed config file
 cp cloudrover.conf /usr/local/lib/cloudrover/priv/
 
-# download init.d script
-mv cloudrover-initd /usr/local/etc/rc.d/cloudrover
+# put init.d script in place
+cp cloudrover-initd /usr/local/etc/rc.d/cloudrover
 chmod 0755 /usr/local/etc/rc.d/cloudrover
 ln -s /usr/local/etc/rc.d/cloudrover /etc/init.d/cloudrover
 
