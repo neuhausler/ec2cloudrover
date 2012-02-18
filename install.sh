@@ -17,6 +17,9 @@ cd ..
 mkdir -p /usr/local/lib/cloudrover
 cp -r CloudRover/* /usr/local/lib/cloudrover
 
+# remove old link
+rm /usr/local/etc/cloudrover
+
 ln -s -f /usr/local/lib/cloudrover/priv /usr/local/etc/cloudrover
 mkdir -p /usr/local/etc/cloudrover/work
 mkdir -p /usr/local/var/log/cloudrover
